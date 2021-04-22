@@ -6,45 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>VirtualTecnoDinamyc</title>
+        <link rel="shortcut icon" href="./images/logoempresa.png" type="image/x-icon"/>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="background-color: #0D6EFD">
+            <div class="container"> 
+            <div class="container-fluid">
+                    <h1 style="color:#fff">VIRTUAL TECNO DINAMYC</h1>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <!-- Authentication Links -->   
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                        <div class="navbar-nav me-4">
+                             <div class="navbar-nav">
+                               <a class="btn btn-info" href="{{ route('login') }}">INICIO</a>
+                            </div>
+                            <div class="navbar-nav">
+                               <a class="btn btn-info" href="{{ route('register') }}">Register</a>
+                            </div>
+                            </div>
+                        </div>
+                     </div>
+                     
+                     
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

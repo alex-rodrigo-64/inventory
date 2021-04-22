@@ -43,17 +43,13 @@
                         <div class="navbar-nav">
                             <a class="navbar-brand" href="{{ url('/showDisk') }}">DISCOS</a>
                         </div>
-                <div class="container-fluid">
-                    <form action="{{ route('disco.compatible') }}" method="POST" class="d-flex">
-                    {{csrf_field()}}
-                        <input class="form-control mx-7"  type="search" placeholder="Ingrese tarjeta logica" aria-label="Search" name="logico">
-                        <button class="btn btn-outline-light" type="submit">Búsqueda</button>
-                        
-                    </form>
-                    
-                  </div>
-                  <div class="container-fluid">
-                    <a href="{{url('cerrar')}}"  class="btn btn-outline-light">cerrar</a>
+                            <div class="container-fluid">
+                              <form action="{{ route('disco.compatible') }}" method="POST" class="d-flex">
+                               {{csrf_field()}}
+                                 <input class="form-control mx-7"  type="search" placeholder="Ingrese tarjeta logica" aria-label="Search" name="logico">
+                              <button class="btn btn-outline-light" type="submit">Búsqueda</button>
+                             </form>
+                             
                     
                   </div>
                   
@@ -61,6 +57,13 @@
              </div>
              </div>
              </div>
+             <div class="container-fluid">
+                     <div class="row">
+                      <div class="col">
+                          <a href="{{url('cerrar')}}"  class="btn btn-outline-light" style="position: absolute; right: 0;">CERRAR SESION</a>
+                      </div>
+                    </div>
+              </div>
      </nav>
 
      <header class="container-fluid" style="height: 500px; background-color: #fff ">
