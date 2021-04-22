@@ -12,7 +12,7 @@ use \PDF;
 class DiskController extends Controller
 {
     public function inicio(){
-        return view('ss');
+        return view('home');
     }
 
 
@@ -75,7 +75,7 @@ class DiskController extends Controller
 
                $new = $request->targetaLogica;
 
-               DB::table('discos')
+               DB::table('disks')
                 ->where('id', $id)
                 ->update(['bandera' => 0]);
 
@@ -116,8 +116,8 @@ class DiskController extends Controller
         }
 
           public function imprimir(){
-              $dis = DB::table('discos')
-              ->select('discos.*')
+              $dis = DB::table('disks')
+              ->select('disks.*')
               ->get();
               $datos = compact('dis');  
               $pdf = PDF::loadView('pdf', $datos);
@@ -134,7 +134,7 @@ class DiskController extends Controller
          $busqueda = strtoupper($request->input('logico'));   
          //https://www.google.com/search?q=701499&oq=701499&aqs=chrome..69i57.2100j0j15&sourceid=chrome&ie=UTF-8       
          $discoL = DB::table('compatibles')
-         ->join('discos','discos.id','=','compatibles.id_logica')
+         ->join('disks','disks.id','=','compatibles.id_logica')
          ->where('tarjeta_logica',  strtoupper($request->logico))
          ->get();
          if(sizeof($discoL)>0){
@@ -214,18 +214,18 @@ class DiskController extends Controller
     }
 
     public function terminaRegistro(){
-        DB::table('discos')
+        DB::table('disks')
             ->where('bandera', 0)
             ->update(['bandera' => 1]);
             
         return view('home');
     }
     public function terminaRegistro2(){
-        DB::table('discos')
+        DB::table('disks')
             ->where('bandera', 0)
             ->update(['bandera' => 1]);
             
-            $dis = DB::table('discos')->get();
+            $dis = DB::table('disks')->get();
 
             return view('showDisk',compact('dis'));
     }
@@ -235,13 +235,13 @@ class DiskController extends Controller
     }
 
     public function showDisk(){
-        $discoL = DB::table('compatibles')
-            ->select("disks.*"
-            	,DB::raw("(GROUP_CONCAT(compatibles.tarjeta_logica SEPARATOR '-')) as `tarjeta_logica`"))
-            ->leftjoin("disks","disks.id","=","compatibles.id_logica")
-            ->groupBy('compatibles.id_logica')
+        // $discoL = DB::table('compatibles')
+        //     ->select("disks.*"
+        //     	,DB::raw("(GROUP_CONCAT(compatibles.tarjeta_logica SEPARATOR '-')) as `tarjeta_logica`"))
+        //     ->leftjoin("disks","disks.id","=","compatibles.id_logica")
+        //     ->groupBy('compatibles.id_logica')
 
-            ->get();       
+        //     ->get();       
         $dis = DB::table('disks')->get();
 
       return view('showDisk',compact('dis'));
@@ -252,8 +252,8 @@ class DiskController extends Controller
         ]);
         $buscado = strtoupper($request->input('busqueda')); 
         
-        $dis = DB::table('discos')
-        ->select('discos.*')
+        $dis = DB::table('disks')
+        ->select('disks.*')
         ->where('tarjetaLogica',$buscado)
         ->get();
         

@@ -28,39 +28,43 @@
         </div>
 
     @endif
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-               <div class="container">
+<nav class="navbar navbar-expand-xl navbar-dark bg-primary">
+               <div class="container-fluid">
                 <div class="row">
-                  <div class="container-fluid">
-                    <h1 style="color:#fff">VIRTUAL TECNO DINAMYC</h1>
-                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                       <span class="navbar-toggler-icon"></span>
-                     </button>
-                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                 <div class="navbar-nav me-4">
-                            <a class="navbar-brand" href="{{ url('/registro') }}">REGISTRO</a>
-                        </div>
-                        <div class="navbar-nav">
-                            <a class="navbar-brand" href="{{ url('/showDisk') }}">DISCOS</a>
-                        </div>
-                <div class="container-fluid">
-                    <form action="{{ route('disco.compatible') }}" method="POST" class="d-flex">
-                    {{csrf_field()}}
+                  <div class="col">
+                      <h1 style="color:#fff">VIRTUAL TECNO DINAMYC</h1>
+                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                         <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                      <div class="navbar-nav me-4">
+                          <a class="navbar-brand" href="{{ url('/registro') }}">REGISTRO</a>
+                      </div>
+                      <div class="navbar-nav">
+                          <a class="navbar-brand" href="{{ url('/showDisk') }}">DISCOS</a>
+                      </div>
+                      <div class="container-fluid">
+                      <form action="{{ route('disco.compatible') }}" method="POST" class="d-flex">
+                        {{csrf_field()}}
                         <input class="form-control mx-7"  type="search" placeholder="Ingrese tarjeta logica" aria-label="Search" name="logico">
                         <button class="btn btn-outline-light" type="submit">Búsqueda</button>
                         
-                    </form>
+                       </form>
                     
+                      </div>
+                                        
                   </div>
-                  <div class="container-fluid">
-                    <a href="{{url('cerrar')}}"  class="btn btn-outline-light">cerrar</a>
-                    
-                  </div>
-                  
+                 </div>
+                </div>
                </div>
-             </div>
-             </div>
-             </div>
+              <div class="container-fluid">
+                     <div class="row">
+                      <div class="col">
+                          <a href="{{url('cerrar')}}"  class="btn btn-outline-light" style="position: absolute; right: 0;">CERRAR SESION</a>
+                          
+                      </div>
+                    </div>
+              </div>
      </nav>
 
      <header class="container-fluid" style="height: 500px; background-color: #fff ">

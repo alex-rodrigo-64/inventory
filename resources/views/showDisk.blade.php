@@ -79,7 +79,7 @@
                         <form action="{{url('showDisk/eliminar/'.$dis->id)}}" method="post" class="d-inline">
                         {{csrf_field()}}
                         {{ method_field('DELETE') }}
-                        <button class="btn btn-danger" onclick = " return confirm ('¿Esta seguro de Eliminar este Usuario?'); " type="submit">Eliminar</button>
+                        <button class="btn btn-danger" onclick = " return confirm ('¿Esta seguro de Eliminar este Disco?'); " type="submit">Eliminar</button>
                         </form>    
                     </td> 
                     </tr>
